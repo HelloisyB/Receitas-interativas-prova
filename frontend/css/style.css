@@ -1,0 +1,137 @@
+/* Estilos globais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4eee0; /* tom bege claro */
+    color: #4b3e2a; /* marrom escuro */
+  }
+  
+  header {
+    background-color: #8c6e52; /* marrom médio */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  nav button {
+    background-color: #a1866f;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  nav button:hover {
+    background-color: #8c6e52;
+  }
+  
+  main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Tela inicial centralizada */
+  #home {
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  #home h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+  
+  #home button {
+    font-size: 16px;
+    padding: 3opx 40px;
+    background-color: #a1866f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 200px; /* aqui aumenta o espaço acima */
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff9f1;
+    color: #4b3e2a;
+    font-size: 14px;
+  }
+  
+  button {
+    background-color: #a1866f;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  button:hover {
+    background-color: #8c6e52;
+  }
+  
+  /* Resultados de receitas */
+  #resultados div {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #d2bba0;
+    background-color: #fff6e5;
+    border-radius: 5px;
+  }
+  
+  #resultados img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Separador */
+  hr {
+    border: none;
+    border-top: 1px solid #d2bba0;
+    margin: 20px 0;
+  }
+  
+  /* Lista de compras */
+  #lista-compras {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  #carrinho {
+    padding-top: 1rem;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #8c6e52;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;   /* bem pequeno */
+    padding: 8px 0;
+    position: fixed;   /* gruda no rodapé */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tempero Virtual</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Tempero Virtual</h1>
+  </header>
+
+  <main>
+    <!-- Tela Inicial -->
+    <section id="home">
+      <h2>Tempero Virtual</h2>
+      <p>Organize, avalie e compartilhe receitas deliciosas!</p>
+      <button onclick="mostrarMenu()">Continuar</button>
+    </section>
+
+    <!-- Menu oculto inicialmente -->
+    <nav id="menu-principal" style="display:none;">
+      <button onclick="mostrarBuscar()">Buscar Receita</button>
+      <button onclick="mostrarAdicionar()">Adicionar Receita</button>
+      <button onclick="mostrarCarrinho()">Lista de Compras</button>
+    </nav>
+
+    <!-- Buscar -->
+    <section id="buscar" style="display:none;">
+      <h2>Buscar Receitas</h2>
+      <input type="text" id="busca" placeholder="Digite um ingrediente, nome ou tag" oninput="buscarReceitas()" />
+      <div id="resultados"></div>
+    </section>
+
+    <!-- Adicionar -->
+    <section id="adicionar" style="display:none;">
+      <h2>Adicionar Nova Receita</h2>
+      <label for="nome">Nome da Receita:</label><br/>
+      <input type="text" id="nome" /><br/>
+
+      <label for="ingredientes">Ingredientes (separados por vírgula):</label><br/>
+      <input type="text" id="ingredientes" /><br/>
+
+      <label for="preparo">Modo de Preparo:</label><br/>
+      <textarea id="preparo" rows="4"></textarea><br/>
+
+      <label for="tags">Tags (ex: almoço, doce):</label><br/>
+      <input type="text" id="tags" /><br/>
+
+      <label for="imagem">Enviar Imagem:</label><br/>
+      <input type="file" id="imagem" accept="image/*" /><br/><br/>
+
+      <button onclick="salvarReceita()">Salvar Receita</button>
+    </section>
+
+    <!-- Lista de Compras -->
+    <section id="carrinho" style="display:none;">
+      <h2>Lista de Compras</h2>
+      <ul id="lista-compras"></ul>
+      <button onclick="limparLista()">Limpar Lista</button>
+    </section>
+  </main>
+
+  <footer id="rodape">
+    <p>&copy; 2025 Tempero Virtual</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
