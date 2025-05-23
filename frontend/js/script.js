@@ -22,6 +22,7 @@ function mostrarCarrinho() {
   esconderSecoes();
   document.getElementById('carrinho').style.display = 'block';
 
+  // Lista de compras é um array de objetos { nomeReceita, ingrediente }
   const lista = JSON.parse(localStorage.getItem("lista_compras")) || [];
   const ul = document.getElementById("lista-compras");
   ul.innerHTML = "";
@@ -31,14 +32,16 @@ function mostrarCarrinho() {
     return;
   }
 
+  // Contar quantidade por combinação nomeReceita + ingrediente
   const contagem = {};
   lista.forEach(item => {
-    contagem[item] = (contagem[item] || 0) + 1;
+    const chave = `${item.nomeReceita} - ${item.ingrediente}`;
+    contagem[chave] = (contagem[chave] || 0) + 1;
   });
 
-  for (const item in contagem) {
+  for (const chave in contagem) {
     const li = document.createElement("li");
-    li.textContent = `${item} x${contagem[item]}`;
+    li.textContent = `${chave} x${contagem[chave]}`;
     ul.appendChild(li);
   }
 }
@@ -186,4 +189,55 @@ function excluirReceita(id) {
     localStorage.setItem("receitas", JSON.stringify(receitas));
     buscarReceitas();
   }
+}
+
+// Avaliar receita
+function avaliarReceita(id, valor) {
+  const avaliacao = parseInt(valor);
+  if (avaliacao < 1 || avaliacao > 5) return;
+
+  let receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+  receitas = receitas.map(r => {
+    if (r.id === id) {
+      r.avaliacao = avaliacao;
+    }
+    return r;
+  });
+
+  localStorage.setItem("receitas", JSON.stringify(receitas));
+  buscarReceitas();
+}
+
+// Comentar receita
+function comentarReceita(id, texto) {
+  const comentario = texto.trim();
+  if (!comentario) return;
+
+  let receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+  receitas = receitas.map(r => {
+    if (r.id === id) {
+      r.comentarios.push(comentario);
+    }
+    return r;
+  });
+
+  localStorage.setItem("receitas", JSON.stringify(receitas));
+  buscarReceitas();
+}
+  
+// Adiciona ingredientes da receita à lista de compras, junto com o nome da receita
+function adicionarListaCompras(id) {
+  const receitas = JSON.parse(localStorage.getItem("receitas")) || [];
+  const receita = receitas.find(r => r.id === id);
+  if (!receita) return;
+
+  // lista_compras agora é array de objetos { nomeReceita, ingrediente }
+  const lista = JSON.parse(localStorage.getItem("lista_compras")) || [];
+
+  receita.lista.forEach(ingrediente => {
+    lista.push({ nomeReceita: receita.nome, ingrediente });
+  });
+
+  localStorage.setItem("lista_compras", JSON.stringify(lista));
+  alert(`Ingredientes da receita "${receita.nome}" adicionados à lista de compras!`);
 }
