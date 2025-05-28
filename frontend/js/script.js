@@ -32,17 +32,31 @@ function mostrarCarrinho() {
     return;
   }
 
-  // Contar quantidade por combinação nomeReceita + ingrediente
-  const contagem = {};
+  // Organizar ingredientes agrupados pelo nome da receita
+  const agrupado = {};
+
   lista.forEach(item => {
-    const chave = `${item.nomeReceita} - ${item.ingrediente}`;
-    contagem[chave] = (contagem[chave] || 0) + 1;
+    if (!agrupado[item.nomeReceita]) {
+      agrupado[item.nomeReceita] = {};
+    }
+    agrupado[item.nomeReceita][item.ingrediente] = (agrupado[item.nomeReceita][item.ingrediente] || 0) + 1;
   });
 
-  for (const chave in contagem) {
-    const li = document.createElement("li");
-    li.textContent = `${chave} x${contagem[chave]}`;
-    ul.appendChild(li);
+  // Para cada receita, criar um título com o nome e listar ingredientes com quantidade
+  for (const nomeReceita in agrupado) {
+    const liTitulo = document.createElement("li");
+    liTitulo.style.fontWeight = "bold";
+    liTitulo.textContent = nomeReceita;
+    ul.appendChild(liTitulo);
+
+    const ingredientes = agrupado[nomeReceita];
+    for (const ingrediente in ingredientes) {
+      const quantidade = ingredientes[ingrediente];
+      const liIngrediente = document.createElement("li");
+      liIngrediente.style.marginLeft = "20px";
+      liIngrediente.textContent = `${ingrediente} x${quantidade}`;
+      ul.appendChild(liIngrediente);
+    }
   }
 }
 
@@ -224,7 +238,7 @@ function comentarReceita(id, texto) {
   localStorage.setItem("receitas", JSON.stringify(receitas));
   buscarReceitas();
 }
-  
+
 // Adiciona ingredientes da receita à lista de compras, junto com o nome da receita
 function adicionarListaCompras(id) {
   const receitas = JSON.parse(localStorage.getItem("receitas")) || [];
