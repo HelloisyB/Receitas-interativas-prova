@@ -18,15 +18,14 @@ for i in range(5):
   soma += numero
   print(f"a soma dos cinco numeros é: {soma}")
 
-#receber numero e imprimir tabuada de 1 a 10
+# Receber número e imprimir tabuada de 1 a 10
 numero = int(input("Digite um número: "))
-print("taduada do:", numero)
+print("Tabuada do:", numero)
 for i in range(1, 11):
-print(numero)
-#?
-
-#mostrar numeros pares entre 1 e 20
-for i in range ():#rever
-    print(i)
-
+    print(f"{numero} x {i} = {numero * i}") 
     
+# Mostrar números pares entre 1 e 20
+print("Números pares entre 1 e 20:")
+for i in range(1, 21):  # De 1 a 20
+    if i % 2 == 0:  # Verifica se o número é par
+        print(i)
