@@ -1,6 +1,6 @@
 #cadastrar produto, excluir produto, listar produto.
 #MENU DE OPERAÇÕES, USO DE LISTA, MATCH CASE, USAR FUNÇÃO (obrigatorio)
-#aceitar letras A | a .upper ( string de texto em letras maiúsculas) e minusculos
+#aceitar letras A | a .upper ( string de texto em letras maiúsculas) e minusculos sera lower
 
 produtos = []
 
