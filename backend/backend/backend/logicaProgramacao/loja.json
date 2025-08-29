@@ -1,0 +1,8 @@
+[
+    {
+        "nome_produto": "limao",
+        "quantidade": 2,
+        "preco": 5.0,
+        "tem_estoque": true
+    }
+]
