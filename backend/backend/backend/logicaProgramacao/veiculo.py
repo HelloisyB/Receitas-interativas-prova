@@ -7,13 +7,13 @@
 #usar funçao, id 
 import json
 NOME_ARQUIVO = 'moya_imports.json'
+proximo_id = 1
 
 def carregar_estoque():
     try:
         with open(NOME_ARQUIVO, 'r') as arquivo:
             estoque_veiculos = json.load(arquivo)
-            
-            proximo_id = 1
+          
             if estoque_veiculos:
                 maior_id_encontrado = 0
                 for veiculo in estoque_veiculos:
