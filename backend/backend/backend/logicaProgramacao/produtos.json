@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "nome": "aparelho eletronico",
+        "preco": 2000.0,
+        "id_categoria": 229
+    },
+    {
+        "id": 2,
+        "nome": "celular",
+        "preco": 3000.0,
+        "id_categoria": 999
+    },
+    {
+        "id": 2,
+        "nome": "fio fe energia",
+        "preco": 30.0,
+        "id_categoria": 567
+    },
+    {
+        "id": 2,
+        "nome": "gtd",
+        "preco": 97.0,
+        "id_categoria": 432
+    },
+    {
+        "id": 0,
+        "nome": "imag",
+        "preco": 98.0,
+        "id_categoria": 97
+    },
+    {
+        "id": 0,
+        "nome": "saco",
+        "preco": 23.0,
+        "id_categoria": 0
+    }
+]
