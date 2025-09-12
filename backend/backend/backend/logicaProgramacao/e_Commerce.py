@@ -3,6 +3,7 @@
 # Cada categoria deve ter um id_categoria (um número inteiro único) e um nome_categoria (texto).
 
 #CATEGORIAS.JSON E PRODUTOS.JSON
+
 import json
 
 ARQUIVO_CATEGORIAS = 'categorias.json'
@@ -14,9 +15,9 @@ produtos_id = 0
 categorias = []
 produtos = []
 
-def carregar_arquivo(categorias):
+def carregar_arquivo(nome_arquivo):
     try:
-        with open(categorias, 'r') as arquivo:
+        with open(nome_arquivo, 'r') as arquivo:
             return json.load(arquivo)
     except FileNotFoundError:
         return []
@@ -65,23 +66,30 @@ def cadastrar_produto():
     print("Produto cadastrado com sucesso!")
 
 def listar_categorias():
-    global categorias
     if categorias:
         print("CATEGORIAS:")
-        for categorias in categorias:
-            print(f"ID: {categorias['id']} - Nome: {categorias['nome']}")
+        for categoria in categorias:
+            print(f"ID: {categoria['id']} - Nome: {categoria['nome']}")
     else:
         print("Nenhuma categoria cadastrada.")
-
+        
 def listar_produtos():
-    global produtos
-    global categorias
     if produtos:
         print("PRODUTOS:")
-        for produtos in produtos:
-            print(f"ID: {produtos['id']} - Nome: {produtos['nome']} - Preço: {produtos['preco']} - Categoria: {produtos['id_categoria']}") # não deu tempo
+        for produto in produtos:
+            nome_categoria = "Categoria não encontrada"
+            for categoria in categorias:
+                if categoria["id"] == produto["id_categoria"]:
+                    nome_categoria = categoria["nome"]
+                    break
+
+            print(f"ID: {produto['id']} - Nome: {produto['nome']} - Preço: {produto['preco']} - Categoria: {nome_categoria}")
     else:
         print("Nenhum produto cadastrado.")
+
+    #percorrer lista categoria
+        #encontar categoria com id cadastrado no prod
+        #pegar nome da categoria com chave  exemplo: categoria["nome"]
 
 categorias = carregar_arquivo(ARQUIVO_CATEGORIAS)
 produtos = carregar_arquivo(ARQUIVO_PRODUTOS)
