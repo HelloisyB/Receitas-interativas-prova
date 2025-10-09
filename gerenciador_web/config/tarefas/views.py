@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Tarefa
 
-def listar_tarefa(request):
+def listar_tarefas(request):
     # 1. a busca no banco de dados continua a mesma
     tarefas_salvas = Tarefa.objects.all()
 
@@ -21,17 +21,38 @@ def detalhe_tarefa(request, tarefa_id):
 
     return render(request, 'tarefas/detalhe.html', {'tarefa':tarefa})
 
-
 def adicionar_tarefa(request):
     if request.method == 'POST':
         titulo = request.POST.get('titulo')
         descricao = request.POST.get('descricao')
-        Tarefa.objects.create(titulo=titulo, descricao=descricao)
-        return redirect('lista_tarefas')
-    return render (request,'tarefas/form_tarefas.html')
+        Tarefa.objects.create(titulo = titulo, descricao = descricao)   
+        return redirect('listar_tarefas')
+    return render (request, 'tarefas/form_tarefas.html')
 
 #métodos HTTP
 #POST: envia dados para o servidor
-#GET: busca dados no servidor
-#PUT: atualiza recursos 'existentes'
+#GET: buscar dados no servidor
+#PUT: atualizar recursos existetes
 #DELETE: remove recursos selecionados
+
+def alterar_tarefa(request, tarefa_id):
+    tarefa = get_object_or_404(Tarefa, pk=tarefa_id)
+    
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descricao = request.POST.get('descricao')
+        concluida = request.POST.get('concluida') == 'on' 
+
+      
+        tarefa.titulo = titulo
+        tarefa.descricao = descricao
+        tarefa.concluida = concluida
+        
+        tarefa.save()
+        
+        return redirect('lista_tarefas')
+
+    context = {
+        'tarefa': tarefa,
+    }
+    return render(request, 'tarefas/form_tarefas.html', context)

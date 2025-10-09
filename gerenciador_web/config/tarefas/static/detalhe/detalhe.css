@@ -1,37 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo suave */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background: #f4f6f9;
     color: #333;
-    margin: 20px;
+    padding: 40px;
+    line-height: 1.6;
 }
 
+/* Título principal */
 h1 {
-    color: #007bff;
-    font-size: 2em;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Parágrafos */
 p {
-    font-size: 1.1em;
-    margin: 10px 0;
+    margin: 12px 0;
+    font-size: 1rem;
 }
 
+/* Destaque no título do campo */
 strong {
-    color: #555;
-}
-
-small {
-    color: #888;
-}
-
-a {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #28a745;
-    padding: 8px 12px;
-    border-radius: 4px;
-}
-
-a:hover {
-    background-color: #218838;
+    color: #344
 }
