@@ -5,10 +5,10 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fundo suave */
+/* Fundo suave com tom terroso claro */
 body {
-    background: #f4f6f9;
-    color: #333;
+    background: #f3e8dc; /* bege claro */
+    color: #4b3621;       /* marrom escuro */
     padding: 40px;
     line-height: 1.6;
 }
@@ -16,7 +16,7 @@ body {
 /* Título principal */
 h1 {
     font-size: 2rem;
-    color: #2c3e50;
+    color: #8b5e3c;       /* marrom médio */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -25,9 +25,61 @@ h1 {
 p {
     margin: 12px 0;
     font-size: 1rem;
+    color: #5c4033;       /* marrom escuro suave */
 }
 
 /* Destaque no título do campo */
 strong {
-    color: #344
+    color: #a0522d;       /* sienna (tom ferrugem/terra) */
+}
+
+/* LINKS GERAIS (opcional para manter consistência) */
+a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* BOTÃO: EXCLUIR */
+.a-excluir {
+    background-color: #e60000; /* vermelho forte */
+    color: #ffffff;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.a-excluir:hover {
+    background-color: #b30000; /* vermelho mais escuro */
+}
+
+/* BOTÃO: VOLTAR */
+.a-voltar {
+    background-color: #cccccc; /* cinza claro */
+    color: #333333;
+    border-radius: 10px;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.a-voltar:hover {
+    background-color: #999999; /* cinza mais escuro */
+}
+
+/* BOTÃO: ALTERAR */
+.a-alterar {
+    background-color: #8b5e3c; /* marrom médio */
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 6px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.a-alterar:hover {
+    background-color: #6e4328; /* marrom mais escuro */
 }

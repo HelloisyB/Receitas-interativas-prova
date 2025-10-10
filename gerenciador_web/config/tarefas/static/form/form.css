@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #f3e8dc; /* bege claro */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,15 +11,15 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #8b5e3c; /* marrom quente */
     margin-bottom: 20px;
 }
 
 form {
-    background-color: #fff;
+    background-color: #fff8f0; /* bege suave */
     padding: 30px 40px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(139, 94, 60, 0.2); /* sombra marrom */
     width: 100%;
     max-width: 400px;
 }
@@ -28,41 +28,46 @@ label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #6b4c3b; /* marrom médio */
 }
 
 input[type="text"],
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cbb196; /* bege escuro */
     border-radius: 4px;
     margin-bottom: 20px;
     font-size: 14px;
     box-sizing: border-box;
+    background-color: #f7f1e1; /* bege claro */
+    color: #5a3e2b; /* texto marrom */
 }
 
 button[type="submit"] {
-    background-color: #28a745;
+    background-color: #a56939; /* marrom alaranjado */
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #218838;
+    background-color: #7a4b21; /* marrom escuro */
 }
 
 a {
     margin-top: 15px;
     display: inline-block;
-    color: #007bff;
+    color: #a56939; /* marrom alaranjado */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
+    color: #7a4b21;
     text-decoration: underline;
 }

@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e8dc; /* fundo bege claro */
+    text-align: center;
+    padding: 50px;
+    color: #4b3621; /* marrom escuro */
+}
+
+h1 {
+    color: #a0522d; /* sienna – tom terroso marcante */
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #6e4b3a; /* marrom suave */
+}
+
+form {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #8b4513; /* saddle brown – tom forte terroso */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5c3317; /* tom ainda mais escuro no hover */
+}
+
+a {
+    text-decoration: none;
+    color: #8b5e3c; /* marrom médio */
+    font-size: 1em;
+}
+
+a:hover {
+    color: #a0522d; /* sienna */
+}
