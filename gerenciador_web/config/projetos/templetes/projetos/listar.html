@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Projetos</title>
+    <link rel="stylesheet" href="{% static 'Projetos/Projetos.css' %}" />
+</head>
+<body>
+    <h1>Gerador de Projetos Web</h1>
+    <hr />
+
+    {% for projeto in meus_projetos %}
+      <div >
+        <h2>
+          <a>{{ projeto.nome }}</a>
+        </h2>
+        <p>{{ projeto.descricao }}</p>
+        <p>{{ projeto.data_criacao }}</p>
+        
+      </div>
+    {% empty %}
+      <p>Nenhuma tarefa cadastrada ainda. Adicione algumas no <a href="/admin">Admin</a>!</p>
+    {% endfor %}
+</body>
+</html>
